@@ -1,4 +1,4 @@
-const botao = document.querySelector('.botao')
+const botoes = document.querySelectorAll('.botao')
 const lampada = document.getElementById('bulbo')
 var intensidade = 1 
 var estadolampada = 0 
@@ -35,6 +35,10 @@ function trocacorstrobe(){
             }, 100) 
 
 }
+
+botoes.forEach((botao) => {
+    botao.addEventListener('click', () => {botaofuncao(botao.id)})
+})
 
 function botaofuncao(funcao){
     switch (funcao){
